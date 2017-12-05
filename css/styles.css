@@ -29,7 +29,6 @@ button:active {
 }
 
 #display {
-    display: inline-block;
     background: black;
     border: 1px solid black;
     border-radius: 5px;
@@ -38,12 +37,7 @@ button:active {
     margin: 5px 8px 0 0;
     overflow: hidden;
     float: right;
-}
-
-h1 {
-    display: inline;
     font-size: 40px;
     color: green;
-    margin: auto 5px;
     text-align: right;
 }

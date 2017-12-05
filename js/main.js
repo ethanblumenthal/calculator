@@ -4,30 +4,30 @@ var operators = document.querySelectorAll('.operator');
 var equals = document.querySelector('#equals');
 var clear = document.querySelector('#clear');
 
+digits.forEach(function(e) {
+    e.addEventListener('click', handleDigitClick);
+});
+
+operators.forEach(function(e) {
+    e.addEventListener('click', handleOperatorClick);
+});
+
+equals.addEventListener('click', handleEqualsClick);
+
+clear.addEventListener('click', handleClearClick);
+
 function handleDigitClick() {
-    digits.forEach(function(e) {
-        e.addEventListener('click', function() {
-            display.innerText += this.innerText;
-        });
-    });
+    display.innerText += this.innerText;
 }
 
 function handleOperatorClick() {
-    operators.forEach(function(e) {
-        e.addEventListener('click', function() {
-            display.innerText = '';
-        });
-    });
+    display.innerText += this.innerText;    
 }
 
 function handleEqualsClick() {
-    equals.addEventListener('click', function() {
-        display.innerText = eval(display.innerText);
-    });
+    display.innerText = eval(display.innerText);
 }
 
 function handleClearClick() {
-    clear.addEventListener('click', function() {
-        display.innerText = '';
-    });
+    display.innerText = '';
 }

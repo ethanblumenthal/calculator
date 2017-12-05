@@ -7,6 +7,14 @@ button {
     width: 50px;
 }
 
+button:hover {
+    background: lightblue;
+}
+
+button:active {
+  transform: translateY(3px);
+}
+
 #calculator {
     text-align: center;
     display: inline-block;

@@ -25,13 +25,17 @@ button {
     background: black;
     border: 1px solid black;
     border-radius: 5px;
-    width: 240px;
-    height: 50px;
-    margin-top: 5px;
+    width: 180px;
+    height: 48px;
+    margin: 5px 8px 0 0;
+    overflow: hidden;
+    float: right;
 }
 
 h1 {
     display: inline;
     font-size: 40px;
     color: green;
+    margin: auto 5px;
+    text-align: right;
 }

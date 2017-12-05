@@ -28,7 +28,7 @@ button:active {
     transform: translateX(-50%);
 }
 
-#screen {
+#display {
     display: inline-block;
     background: black;
     border: 1px solid black;

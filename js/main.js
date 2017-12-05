@@ -1,15 +1,33 @@
-var text = document.querySelector('h1');
+var display = document.querySelector('#display');
+var digits = document.querySelectorAll('.digit');
+var operators = document.querySelectorAll('.operator');
+var equals = document.querySelector('#equals');
+var clear = document.querySelector('#clear');
 
-document.querySelectorAll('button').forEach(function(e) {
-    e.onclick = function() {
-        text.innerHTML += this.innerHTML;
-    };
-});
-
-document.getElementById('equal').onclick = function() {
-    text.innerHTML = eval(text.innerHTML);
+function handleDigitClick() {
+    digits.forEach(function(e) {
+        e.addEventListener('click', function() {
+            display.innerText += this.innerText;
+        });
+    });
 }
 
-document.getElementById('clear').onclick = function() {
-    text.innerHTML = '';
+function handleOperatorClick() {
+    operators.forEach(function(e) {
+        e.addEventListener('click', function() {
+            display.innerText = '';
+        });
+    });
+}
+
+function handleEqualsClick() {
+    equals.addEventListener('click', function() {
+        display.innerText = eval(display.innerText);
+    });
+}
+
+function handleClearClick() {
+    clear.addEventListener('click', function() {
+        display.innerText = '';
+    });
 }

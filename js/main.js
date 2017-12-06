@@ -3,7 +3,10 @@ var digits = document.querySelectorAll('.digit');
 var operators = document.querySelectorAll('.operator');
 var equals = document.querySelector('#equals');
 var clear = document.querySelector('#clear');
-var equation = [];
+
+var firstNumber = null;
+var selectedOperator = null;
+var secondNumber = null;
 
 digits.forEach(function(e) {
     e.addEventListener('click', handleDigitClick);
@@ -22,14 +25,14 @@ function handleDigitClick() {
 }
 
 function handleOperatorClick() {
-    equation.push(display.innerText); 
-    equation.push(this.innerText);    
+    firstNumber = Number(display.innerText);
+    selectedOperator = this.innerText;    
     display.innerText = '';    
 }
 
 function handleEqualsClick() {
+    secondNumber = Number(display.innerText);
     display.innerText = calculate();
-    equation = [];
 }
 
 function handleClearClick() {
@@ -37,18 +40,18 @@ function handleClearClick() {
 }
 
 function calculate() {
-    switch (equation[1]) {
+    switch (selectedOperator) {
         case '+':
-            return Number(equation[0]) + Number(equation[2]);
+            return firstNumber + secondNumber;
             break;
         case '-':
-        return Number(equation[0]) - Number(equation[2]);
+        return firstNumber - secondNumber;
             break;
         case '*':
-            return Number(equation[0]) * Number(equation[2]);
+            return firstNumber * secondNumber;
             break;
         case '/':
-            return Number(equation[0]) / Number(equation[2]);
+            return firstNumber / secondNumber;
             break;
     }
 }

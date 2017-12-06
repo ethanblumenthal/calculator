@@ -37,6 +37,9 @@ function handleEqualsClick() {
 
 function handleClearClick() {
     display.innerText = '';
+    firstNumber = null;
+    selectedOperator = null;
+    secondNumber = null;
 }
 
 function calculate() {
@@ -47,7 +50,7 @@ function calculate() {
         case '-':
         return firstNumber - secondNumber;
             break;
-        case '*':
+        case 'x':
             return firstNumber * secondNumber;
             break;
         case '/':
